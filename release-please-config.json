@@ -1,11 +1,14 @@
 {
   "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
-  "bootstrap-sha": "6a1b056e72d9e2a583dd650f8daa6179f60864f1",
+  "bootstrap-sha": "fd2433784f69521317d3c46d91d0e01c10ec79fd",
+  "include-component-in-tag": false,
   "packages": {
     ".": {
       "release-type": "node",
       "bump-minor-pre-major": true,
-      "extra-files": ["README.md"]
+      "extra-files": [
+        "README.md"
+      ]
     }
   }
 }

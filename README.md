@@ -61,15 +61,39 @@ Other custom properties:
 :root {
   --term-width: 80ch;          /* max content width */
   --term-scanline-opacity: 0.12;
-  --term-font: 'VT323', ui-monospace, monospace;
+  --term-font: ui-monospace, monospace;
 }
 ```
 
-`VT323` is used when available. To load it:
+## Fonts
+
+termalize.css does not name any web font: it uses the system monospace font
+unless you set `--term-font`. Load a font yourself and put it first:
 
 ```html
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+<style>
+  :root { --term-font: 'VT323', ui-monospace, monospace; }
+</style>
 ```
+
+Set it on `:root` (not `html`) so it overrides the default token.
+
+Recommended fonts:
+
+| Font | Style | Scripts |
+| --- | --- | --- |
+| [VT323](https://fonts.google.com/specimen/VT323) | Pixel, DEC VT320 terminal | Latin |
+| [IBM Plex Mono](https://fonts.google.com/specimen/IBM+Plex+Mono) | Clean monospace | Latin |
+| [DotGothic16](https://fonts.google.com/specimen/DotGothic16) | Pixel | Latin + Japanese |
+| [M PLUS 1 Code](https://fonts.google.com/specimen/M+PLUS+1+Code) | Monospace | Latin + Japanese |
+
+For Japanese text, use a font that covers both scripts (DotGothic16 or M PLUS 1 Code)
+so half-width Latin and full-width Japanese line up on one grid.
+Pairing a Latin-only font with a Japanese fallback mixes two designs and sizes.
+
+All of these are also available from [Fontsource](https://fontsource.org/)
+for self-hosting, e.g. `npm install @fontsource/dotgothic16`.
 
 ## Features
 

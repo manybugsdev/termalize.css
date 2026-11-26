@@ -28,9 +28,8 @@ Internal shorthands. Colors resolve against `currentColor` where used.
 		0 0 8px light-dark(transparent, color-mix(in srgb, currentColor 25%, transparent));
 	--term-error: #ff5555;
 
+	/* System monospace only; set your own font here (see README "Fonts"). */
 	--term-font:
-		'VT323',
-		'IBM Plex Mono',
 		ui-monospace,
 		SFMono-Regular,
 		Consolas,

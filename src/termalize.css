@@ -15,7 +15,11 @@ Internal shorthands. Colors resolve against `currentColor` where used.
 
 :root {
 	--term-fg: currentColor;
-	--term-fg-dim: color-mix(in srgb, currentColor 60%, transparent);
+	/* Dim text stays at >= 4.5:1 contrast with the default palette. */
+	--term-fg-dim: light-dark(
+		color-mix(in srgb, currentColor 80%, transparent),
+		color-mix(in srgb, currentColor 60%, transparent)
+	);
 	--term-fg-faint: color-mix(in srgb, currentColor 33%, transparent);
 	--term-accent: light-dark(
 		color-mix(in srgb, currentColor 70%, #000),
@@ -55,7 +59,7 @@ html {
 	line-height: var(--term-line-height);
 	color-scheme: light dark;
 	background-color: light-dark(#f2f0e6, #050a06);
-	color: light-dark(#1b6630, #33ff66);
+	color: light-dark(#155228, #33ff66);
 	accent-color: var(--term-fg);
 	caret-color: var(--term-fg);
 	-webkit-font-smoothing: antialiased;
@@ -254,6 +258,11 @@ abbr[title] {
 del,
 s {
 	color: var(--term-fg-dim);
+}
+
+/* Dim colors are translucent, so don't dim twice when nested in dimmed text. */
+:is(header, footer, small, del, s, blockquote, figcaption, caption, label) :is(small, del, s, a:visited) {
+	color: inherit;
 }
 
 ins {

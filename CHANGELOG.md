@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/manybugsdev/termalize.css/compare/v0.2.0...v0.2.1) (2026-11-27)
+
+
+### Bug Fixes
+
+* meet WCAG AA contrast for dimmed text ([#4](https://github.com/manybugsdev/termalize.css/issues/4)) ([5f3ec18](https://github.com/manybugsdev/termalize.css/commit/5f3ec185dec20d9e206dc797644e88bae40acc88))
+
 ## [0.2.0](https://github.com/manybugsdev/termalize.css/compare/v0.1.1...v0.2.0) (2026-11-27)
 
 
